@@ -9,7 +9,7 @@
 </script>
 
 <main class="flex flex-col items-center p-16">
-	<div class="card card-bordered bg-base-300">
+	<div class="card card-bordered bg-base-300 w-96">
 		<form method="post" class="card-body flex flex-col gap-2 max-w-screen-md">
 			<h1 class="size-8 font-semibold">Přihlášení</h1>
 			{#if form?.error}

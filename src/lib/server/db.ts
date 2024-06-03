@@ -1,6 +1,6 @@
 import { drizzle } from 'drizzle-orm/neon-http';
 import { neon } from '@neondatabase/serverless';
-import { usersTable } from './schema';
+import { logsTable, usersTable, type LogSeverity } from './schema';
 import { eq } from 'drizzle-orm';
 
 import { config } from 'dotenv';
@@ -26,4 +26,8 @@ export async function ensureUserExists(username: string): Promise<UserId> {
 
 	await db.insert(usersTable).values({ equipLogin: username });
 	return ensureUserExists(username);
+}
+
+export async function log(severity: LogSeverity, message: string) {
+	await db.insert(logsTable).values({ severity, message });
 }

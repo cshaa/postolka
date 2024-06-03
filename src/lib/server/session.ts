@@ -11,6 +11,7 @@ const verifier = createVerifier({ key: secret, algorithms: ['HS512'] });
 export interface Session {
 	username: string;
 	userId: UserId;
+	equipToken: string;
 }
 
 export function setSession(cookies: Cookies, session: Session) {
